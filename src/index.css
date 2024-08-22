@@ -1,0 +1,37 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  transition: background-color 0.3s ease;
+}
+/* Untuk Webkit browsers seperti Chrome, Safari */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Untuk Firefox */
+body {
+  scrollbar-width: none; /* menghilangkan scrollbar */
+}
+
+/* Untuk Internet Explorer dan Edge */
+body {
+  -ms-overflow-style: none; /* menghilangkan scrollbar */
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+.animated-svg {
+  animation: updown 3s ease-in-out infinite;
+}
