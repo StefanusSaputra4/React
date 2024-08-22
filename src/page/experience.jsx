@@ -45,6 +45,7 @@ export default function Timeline() {
         <h3 className="vertical-timeline-element-title">Create a Website</h3>
         <h4 className="vertical-timeline-element-subtitle">Kasetflix</h4>
         <p>I am currently developing a website called 'Kasetflix' as part of a course project. The platform is designed to function similarly to Netflix, allowing users to stream and enjoy various media content online.</p>
+        <a href="https://github.com/Jikoyuo/Platform-Project">https://github.com/Jikoyuo/Platform-Project</a>
         <img src="src/assets/kasetflix.jpg" alt="Kasetflix" style={{ width: "100%", borderRadius: "8px", marginTop: "10px" }} />
       </VerticalTimelineElement>
 

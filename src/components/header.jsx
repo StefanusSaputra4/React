@@ -1,9 +1,16 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { Button, useTheme } from "@mui/material";
 import headerImg from "../assets/header-img.svg"; // Pastikan path SVG benar
+import Link from "@mui/material/Link";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import IconSkills from "./iconSkills";
 
 export default function Header() {
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === "dark";
+
   return (
     <Box
       sx={{
@@ -43,12 +50,12 @@ export default function Header() {
             mb: 1,
           }}
         >
-          Welcome!
+          Hi !
         </Typography>
         <Typography
-          variant="h6"
+          variant="h3"
           fontFamily="Centra"
-          fontSize={{ xs: 32, md: 64 }} // Responsif: ukuran font lebih kecil di perangkat kecil
+          fontSize={{ xs: 48, md: 64 }} // Responsif: ukuran font lebih kecil di perangkat kecil
           sx={{
             background: "linear-gradient(to right, #f472b6, #64748b, #a855f7)",
             WebkitBackgroundClip: "text",
@@ -59,11 +66,77 @@ export default function Header() {
             mb: 1,
           }}
         >
-          Stefanus Saputra
+          it's Stefanus Saputra
         </Typography>
-        <Typography variant="h4" fontFamily="Centra" fontSize={{ xs: 18, md: 24 }}>
-          Programmer - Developer - Musician
+        <Typography variant="h4" fontFamily="Centra" fontSize={{ xs: 24, md: 48 }}>
+          <span style={{ fontWeight: "normal" }}>i'm a </span>
+          <span
+            style={{
+              background: "linear-gradient(to right, #f472b6, #64748b, #a855f7)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              display: "inline-block",
+              fontWeight: "bold",
+              letterSpacing: "tight",
+              mb: 1,
+            }}
+          >
+            Programmer
+          </span>
         </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 2,
+            flexWrap: "wrap",
+          }}
+        >
+          <Link href="https://github.com/StefanusSaputra4/" color="inherit">
+            <IconSkills icon={FaGithub} size={32} />
+          </Link>
+          <Link href="https://www.instagram.com/stefanussaputra_/" color="inherit">
+            <IconSkills icon={FaInstagram} size={32} hoverColor="#E1306C" />
+          </Link>
+          <Link href="https://github.com/StefanusSaputra4/" color="inherit">
+            <IconSkills icon={FaLinkedin} size={32} hoverColor="#0000ff" />
+          </Link>
+        </Box>
+
+        <Button
+          variant="outlined"
+          sx={{
+            mt: 2, // Margin top untuk memberi jarak dari teks
+            borderColor: isDarkMode ? "rgba(255, 255, 255, 0.7)" : "rgba(0, 0, 0, 0.7)", // Warna border menyesuaikan mode
+            color: isDarkMode ? "rgba(255, 255, 255, 0.7)" : "rgba(0, 0, 0, 0.7)", // Warna teks menyesuaikan mode
+            backgroundColor: "transparent", // Warna latar transparan
+            "&:hover": {
+              background: "linear-gradient(to right, #f472b6, #64748b, #a855f7)", // Gradient saat hover
+              color: "white", // Warna teks saat hover
+              borderColor: "transparent", // Hilangkan border saat hover
+            },
+          }}
+        >
+          <Link
+            href="#contact"
+            sx={{
+              textDecoration: "none",
+              // Margin top untuk memberi jarak dari teks
+              borderColor: isDarkMode ? "rgba(255, 255, 255, 0.7)" : "rgba(0, 0, 0, 0.7)", // Warna border menyesuaikan mode
+              color: isDarkMode ? "rgba(255, 255, 255, 0.7)" : "rgba(0, 0, 0, 0.7)", // Warna teks menyesuaikan mode
+              backgroundColor: "transparent", // Warna latar transparan
+              "&:hover": {
+                background: "linear-gradient(to right, #f472b6, #64748b, #a855f7)", // Gradient saat hover
+                color: "white", // Warna teks saat hover
+                borderColor: "transparent", // Hilangkan border saat hover
+              },
+            }}
+          >
+            Contact Me
+          </Link>
+        </Button>
       </Box>
 
       <Box

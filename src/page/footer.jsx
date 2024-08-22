@@ -141,10 +141,10 @@ export default function Footer() {
               gap: "10px", // Jarak antara ikon sosial media
             }}
           >
-            <Link href="https://github.com/HerodionY" color="inherit">
+            <Link href="https://github.com/StefanusSaputra4/" color="inherit">
               <FaGithub size="25" style={{ color: (theme) => theme.palette.text.primary }} />
             </Link>
-            <Link href="#" color="inherit">
+            <Link href="https://www.instagram.com/stefanussaputra_/" color="inherit">
               <FaInstagram size="25" style={{ color: (theme) => theme.palette.text.primary }} />
             </Link>
             <Link href="#" color="inherit">
@@ -175,7 +175,7 @@ export default function Footer() {
               fontWeight: "600",
             }}
           >
-            &copy; {new Date().getFullYear()} Herodion. All rights reserved.
+            &copy; {new Date().getFullYear()} Stefanus Saputra. All rights reserved.
           </Typography>
         </Box>
         <Box

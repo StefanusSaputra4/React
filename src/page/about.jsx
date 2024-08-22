@@ -3,6 +3,8 @@ import ActionAreaCard from "../components/card";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import IconSkills from "../components/iconSkills";
+import { FaJava, FaPython, FaHtml5, FaPhp, FaJs, FaReact } from "react-icons/fa";
+import { MdOutlineCss } from "react-icons/md";
 
 export default function About() {
   return (
@@ -25,7 +27,24 @@ export default function About() {
           has grown into a deep passion for coding and problem-solving. I enjoy turning complex problems into simple, beautiful, and efficient solutions. In my spare time, I contribute to open-source projects and constantly seek to learn
           new skills that can help me grow as a developer.
           <h4>Programming Skills</h4>
-          <IconSkills />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 2,
+              flexWrap: "wrap",
+            }}
+          >
+            <IconSkills icon={FaJava} size={64} hoverColor="#CD5C08" />
+            <IconSkills icon={FaPython} hoverColor="#3FA2F6" />
+            <IconSkills icon={FaHtml5} hoverColor="#E76F51" />
+            <IconSkills icon={FaPhp} hoverColor="#304463" />
+            <IconSkills icon={FaJs} hoverColor="#FFDE4D" />
+            <IconSkills icon={FaReact} hoverColor="#3FA2F6" />
+            <IconSkills icon={MdOutlineCss} hoverColor="black" />
+          </Box>
           <h4>Other Skills</h4>
         </Typography>
         <Box
