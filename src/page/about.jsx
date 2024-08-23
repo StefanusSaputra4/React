@@ -59,10 +59,26 @@ export default function About() {
             borderBottom: "1px solid #000",
           }}
         >
-          <ActionAreaCard title="Music" image="https://images5.alphacoders.com/565/thumb-1920-565671.jpg" />
-          <ActionAreaCard title="Photography" image="https://wallpapers.com/images/hd/taking-landscape-photography-at-mountain-peak-mst8druox12zd28t.webp" />
-          <ActionAreaCard title="Design UI/UX" image="https://cdn.prod.website-files.com/6100d0111a4ed76bc1b9fd54/64664e9cd07202af8bcdc5e4_5757453-p-2000.jpg " />
-          <ActionAreaCard title="Public Speaking" image="https://creators.noice.id/wp-content/uploads/2023/02/1.-4-Tips-Dasar-Belajar-Public-Speaking-bagi-Podcaster.jpg" />
+          <ActionAreaCard
+            title="Music"
+            image="https://images5.alphacoders.com/565/thumb-1920-565671.jpg"
+            desc="Exploring the world of melodies, rhythms, and harmonies, where every note tells a story. Whether it's creating, playing, or just listening, music is a universal language that connects us all."
+          />
+          <ActionAreaCard
+            title="Photography"
+            image="https://wallpapers.com/images/hd/taking-landscape-photography-at-mountain-peak-mst8druox12zd28t.webp"
+            desc="Capturing moments through the lens, photography is the art of seeing the world in a different light. Every snapshot is a memory, a perspective, a unique view that immortalizes the beauty around us."
+          />
+          <ActionAreaCard
+            title="Design UI/UX"
+            image="https://cdn.prod.website-files.com/6100d0111a4ed76bc1b9fd54/64664e9cd07202af8bcdc5e4_5757453-p-2000.jpg"
+            desc="Crafting seamless and intuitive user experiences, UI/UX design is at the heart of every digital interaction. It's about creating interfaces that are not only functional but also aesthetically pleasing."
+          />
+          <ActionAreaCard
+            title="Public Speaking"
+            image="https://creators.noice.id/wp-content/uploads/2023/02/1.-4-Tips-Dasar-Belajar-Public-Speaking-bagi-Podcaster.jpg"
+            desc="The art of conveying ideas, inspiring action, and connecting with an audience. Public speaking is more than just words; it's about delivering a message that resonates and leaves a lasting impact."
+          />
         </Box>
       </Box>
     </>

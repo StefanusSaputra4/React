@@ -9,7 +9,7 @@ export default function Contact() {
   const [errors, setErrors] = useState({
     user_name: "",
     user_email: "",
-    subject: "",
+
     message: "",
   });
 
@@ -34,10 +34,7 @@ export default function Contact() {
       newErrors.user_email = "Invalid email address";
       valid = false;
     }
-    if (!formData.get("subject")) {
-      newErrors.subject = "Subject is required";
-      valid = false;
-    }
+
     if (!formData.get("message")) {
       newErrors.message = "Message is required";
       valid = false;
@@ -115,20 +112,9 @@ export default function Contact() {
             sx: { color: (theme) => theme.palette.text.primary },
           }}
         />
-        <TextField
-          id="subject"
-          name="subject"
-          label="Subject"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          error={!!errors.subject}
-          helperText={errors.subject}
-          InputProps={{
-            sx: { color: (theme) => theme.palette.text.primary },
-          }}
-        />
+
         <BasicOutlinedTextarea id="message" name="message" placeholder="Your message here..." error={!!errors.message} helperText={errors.message} />
+
         <Button
           type="submit"
           variant="contained"

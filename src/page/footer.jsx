@@ -1,237 +1,122 @@
-import { Box, Typography, Link, Divider } from "@mui/material";
+import { Box, Typography, Link, Divider, TextField, IconButton } from "@mui/material";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-export default function Footer() {
+export default function Footer({ darkMode }) {
   return (
     <Box
       component="footer"
-      position={"relative"}
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "20px",
-        backgroundColor: (theme) => theme.palette.background.paper, // Warna latar belakang mengikuti tema
-        borderTop: (theme) => `1px solid ${theme.palette.divider}`, // Warna border mengikuti tema
-        marginTop: "auto",
-        width: "100%", // Memastikan lebar penuh
+        padding: "40px 20px",
+        backgroundColor: (theme) => theme.palette.background.paper,
+        borderTop: (theme) => `1px solid ${theme.palette.divider}`,
+        width: "100%",
+        color: (theme) => theme.palette.text.primary,
       }}
     >
       <Box
-        id="sb_footer-link"
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "flex-start",
           flexWrap: "wrap",
-          width: "100%",
           textAlign: "left",
           marginBottom: "2rem",
         }}
       >
-        <Box
-          id="sb_footer-links_div"
-          sx={{
-            width: "150px",
-            margin: "1rem",
-            display: "flex",
-            flexDirection: "column",
-            color: (theme) => theme.palette.text.primary, // Warna teks mengikuti tema
-          }}
-        >
-          <Typography variant="h6" sx={{ fontSize: "14px", lineHeight: "17px", marginBottom: "0.9rem" }}>
-            For Business
+        <Box sx={{ margin: "1rem", minWidth: "150px" }}>
+          <Typography variant="h6" sx={{ fontSize: "16px", fontWeight: "bold", marginBottom: "1rem" }}>
+            Sitemap
           </Typography>
-          <Link href="#" color="inherit" sx={{ fontSize: "12px", lineHeight: "15px", margin: "0.5rem" }}>
-            Employer
+          <Link href="#" color="inherit" sx={{ display: "block", marginBottom: "0.5rem" }}>
+            Home
           </Link>
-          <Link href="#" color="inherit" sx={{ fontSize: "12px", lineHeight: "15px", margin: "0.5rem" }}>
-            Individual
+          <Link href="#" color="inherit" sx={{ display: "block", marginBottom: "0.5rem" }}>
+            Agency
+          </Link>
+          <Link href="#" color="inherit" sx={{ display: "block", marginBottom: "0.5rem" }}>
+            Web design
+          </Link>
+          <Link href="#" color="inherit" sx={{ display: "block", marginBottom: "0.5rem" }}>
+            References
+          </Link>
+          <Link href="#" color="inherit" sx={{ display: "block", marginBottom: "0.5rem" }}>
+            Career
           </Link>
         </Box>
 
-        <Box
-          id="sb_footer-links_div"
-          sx={{
-            width: "150px",
-            margin: "1rem",
-            display: "flex",
-            flexDirection: "column",
-            color: (theme) => theme.palette.text.primary,
-          }}
-        >
-          <Typography variant="h6" sx={{ fontSize: "14px", lineHeight: "17px", marginBottom: "0.9rem" }}>
-            Resources
+        <Box sx={{ margin: "1rem", minWidth: "150px" }}>
+          <Typography variant="h6" sx={{ fontSize: "16px", fontWeight: "bold", marginBottom: "1rem" }}>
+            Newsletter subscription
           </Typography>
-          <Link href="#" color="inherit" sx={{ fontSize: "12px", lineHeight: "15px", margin: "0.5rem" }}>
-            Option 1
-          </Link>
-          <Link href="#" color="inherit" sx={{ fontSize: "12px", lineHeight: "15px", margin: "0.5rem" }}>
-            Option 2
-          </Link>
-        </Box>
-
-        <Box
-          id="sb_footer-links_div"
-          sx={{
-            width: "150px",
-            margin: "1rem",
-            display: "flex",
-            flexDirection: "column",
-            color: (theme) => theme.palette.text.primary,
-          }}
-        >
-          <Typography variant="h6" sx={{ fontSize: "14px", lineHeight: "17px", marginBottom: "0.9rem" }}>
-            Partners
-          </Typography>
-          <Link href="#" color="inherit" sx={{ fontSize: "12px", lineHeight: "15px", margin: "0.5rem" }}>
-            Option 1
-          </Link>
-          <Link href="#" color="inherit" sx={{ fontSize: "12px", lineHeight: "15px", margin: "0.5rem" }}>
-            Option 2
-          </Link>
-        </Box>
-
-        <Box
-          id="sb_footer-links_div"
-          sx={{
-            width: "150px",
-            margin: "1rem",
-            display: "flex",
-            flexDirection: "column",
-            color: (theme) => theme.palette.text.primary,
-          }}
-        >
-          <Typography variant="h6" sx={{ fontSize: "14px", lineHeight: "17px", marginBottom: "0.9rem" }}>
-            Company
-          </Typography>
-          <Link href="#aboutMe" color="inherit" sx={{ fontSize: "12px", lineHeight: "15px", margin: "0.5rem" }}>
-            About
-          </Link>
-          <Link href="#" color="inherit" sx={{ fontSize: "12px", lineHeight: "15px", margin: "0.5rem" }}>
-            Press
-          </Link>
-          <Link href="#" color="inherit" sx={{ fontSize: "12px", lineHeight: "15px", margin: "0.5rem" }}>
-            Careers
-          </Link>
-          <Link href="#contactMe" color="inherit" sx={{ fontSize: "12px", lineHeight: "15px", margin: "0.5rem" }}>
-            Contact
-          </Link>
-        </Box>
-
-        <Box
-          id="sb_footer-links_div"
-          sx={{
-            width: "150px",
-            margin: "0.5rem",
-            display: "flex",
-            flexDirection: "column",
-            color: (theme) => theme.palette.text.primary,
-          }}
-        >
-          <Typography variant="h6" sx={{ fontSize: "14px", lineHeight: "17px", marginBottom: "0.9rem" }}>
-            Coming Soon on
-          </Typography>
-          <Box
-            id="socialmedia"
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "10px", // Jarak antara ikon sosial media
-            }}
-          >
-            <Link href="https://github.com/StefanusSaputra4/" color="inherit">
-              <FaGithub size="25" style={{ color: (theme) => theme.palette.text.primary }} />
-            </Link>
-            <Link href="https://www.instagram.com/stefanussaputra_/" color="inherit">
-              <FaInstagram size="25" style={{ color: (theme) => theme.palette.text.primary }} />
-            </Link>
-            <Link href="#" color="inherit">
-              <FaLinkedin size="25" style={{ color: (theme) => theme.palette.text.primary }} />
-            </Link>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <TextField
+              placeholder="Your email address"
+              variant="outlined"
+              size="small"
+              sx={{
+                width: "100%",
+                marginRight: "0.5rem",
+                backgroundColor: (theme) => theme.palette.background.default,
+                borderRadius: "4px",
+                input: { color: (theme) => theme.palette.text.primary },
+              }}
+            />
+            <IconButton sx={{ color: (theme) => theme.palette.text.primary }}>
+              <ArrowForwardIcon />
+            </IconButton>
           </Box>
+          <Typography variant="body2" sx={{ fontSize: "12px", marginTop: "0.5rem" }}>
+            You can read about how your data is processed in our{" "}
+            <Link href="#" color="inherit">
+              privacy policy
+            </Link>
+            .
+          </Typography>
         </Box>
       </Box>
 
-      <Divider sx={{ color: (theme) => theme.palette.text.primary, width: "100%" }} />
+      <Divider sx={{ marginBottom: "1rem", borderColor: (theme) => theme.palette.divider }} />
 
       <Box
-        id="sb_footer-below"
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          flexDirection: { xs: "column", sm: "row" },
-          marginTop: "0.2rem",
-          width: "100%", // Memastikan lebar penuh
-          color: (theme) => theme.palette.text.primary, // Warna teks mengikuti tema
+          alignItems: "center",
+          flexWrap: "wrap",
+          textAlign: "left",
         }}
       >
-        <Box id="sb_footer-copyright">
-          <Typography
-            sx={{
-              fontSize: "13px",
-              lineHeight: "15px",
-              fontWeight: "600",
-            }}
-          >
-            &copy; {new Date().getFullYear()} Stefanus Saputra. All rights reserved.
-          </Typography>
-        </Box>
-        <Box
-          id="sb_footer-below-links"
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            marginTop: { xs: "1rem", sm: "0" },
-            gap: { sm: "2rem" }, // Jarak antara link
-          }}
-        >
-          <Link
-            href="#"
-            color="inherit"
-            sx={{
-              fontSize: "13px",
-              lineHeight: "15px",
-              fontWeight: "600",
-            }}
-          >
-            Terms & Conditions
+        <Box>
+          <Link href="https://github.com/StefanusSaputra4/" color="inherit" sx={{ marginRight: "10px" }}>
+            <FaGithub size="25" />
           </Link>
-          <Link
-            href="#"
-            color="inherit"
-            sx={{
-              fontSize: "13px",
-              lineHeight: "15px",
-              fontWeight: "600",
-            }}
-          >
-            Privacy
+          <Link href="https://www.instagram.com/stefanussaputra_/" color="inherit" sx={{ marginRight: "10px" }}>
+            <FaInstagram size="25" />
           </Link>
-          <Link
-            href="#"
-            color="inherit"
-            sx={{
-              fontSize: "13px",
-              lineHeight: "15px",
-              fontWeight: "600",
-            }}
-          >
-            Security
-          </Link>
-          <Link
-            href="#"
-            color="inherit"
-            sx={{
-              fontSize: "13px",
-              lineHeight: "15px",
-              fontWeight: "600",
-            }}
-          >
-            Cookie Declaration
+          <Link href="#" color="inherit" sx={{ marginRight: "10px" }}>
+            <FaLinkedin size="25" />
           </Link>
         </Box>
+
+        <Box sx={{ display: "flex", gap: "1rem" }}>
+          <Link href="#" color="inherit" sx={{ fontSize: "12px" }}>
+            Indonesia
+          </Link>
+          <Link href="#" color="inherit" sx={{ fontSize: "12px" }}>
+            Data protection
+          </Link>
+          <Link href="#" color="inherit" sx={{ fontSize: "12px" }}>
+            Cookies
+          </Link>
+        </Box>
+      </Box>
+
+      <Box sx={{ marginTop: "2rem", textAlign: "center" }}>
+        <Typography variant="body2" sx={{ fontSize: "12px", color: (theme) => theme.palette.text.secondary }}>
+          Stefanus Saputra
+          <br />
+          &copy; {new Date().getFullYear()} – Made with Love in Yogyakarta
+        </Typography>
       </Box>
     </Box>
   );

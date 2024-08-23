@@ -22,7 +22,11 @@ export default function Timeline() {
     <VerticalTimeline lineColor={theme.palette.primary.main}>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: darkBackground, color: darkText }}
+        contentStyle={{
+          background: darkBackground,
+          color: darkText,
+          border: `2px solid ${darkText}`, // Menambahkan border
+        }}
         contentArrowStyle={{ borderRight: `7px solid ${darkBackground}` }}
         date="2024 - Current"
         iconStyle={{ background: theme.palette.primary.main, color: "#fff" }}
@@ -36,7 +40,7 @@ export default function Timeline() {
 
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: darkBackground, color: darkText }}
+        contentStyle={{ background: darkBackground, color: darkText, border: `2px solid ${darkText}` }}
         contentArrowStyle={{ borderRight: `7px solid ${darkBackground}` }}
         date="2024"
         iconStyle={{ background: theme.palette.primary.main, color: "#fff" }}
@@ -51,7 +55,7 @@ export default function Timeline() {
 
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: darkBackground, color: darkText }}
+        contentStyle={{ background: darkBackground, color: darkText, border: `2px solid ${darkText}` }}
         contentArrowStyle={{ borderRight: `7px solid ${darkBackground}` }}
         date="2023"
         iconStyle={{ background: theme.palette.primary.main, color: "#fff" }}
@@ -65,7 +69,7 @@ export default function Timeline() {
 
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: darkBackground, color: darkText }}
+        contentStyle={{ background: darkBackground, color: darkText, border: `2px solid ${darkText}` }}
         contentArrowStyle={{ borderRight: `7px solid ${darkBackground}` }}
         date="2024"
         iconStyle={{ background: theme.palette.primary.main, color: "#fff" }}
@@ -75,20 +79,6 @@ export default function Timeline() {
         <h4 className="vertical-timeline-element-subtitle">Yogyakarta, Indonesia</h4>
         <p>I worked as a teaching assistant for the Linear Data Structures course at Sanata Dharma University in Yogyakarta.</p>
         <img src="src/assets/asdos.jpg" alt="Teaching Assistant" style={{ width: "100%", borderRadius: "8px", marginTop: "10px" }} />
-      </VerticalTimelineElement>
-
-      <VerticalTimelineElement
-        className="vertical-timeline-element--education"
-        contentStyle={{ background: darkBackground, color: darkText }}
-        contentArrowStyle={{ borderRight: `7px solid ${darkBackground}` }}
-        date="May 2024"
-        iconStyle={{ background: theme.palette.secondary.main, color: "#fff" }}
-        icon={<SchoolIcon />}
-      >
-        <h3 className="vertical-timeline-element-title">Master Of Ceremony</h3>
-        <h4 className="vertical-timeline-element-subtitle">Faculty Psycompare 2024</h4>
-        <p></p>
-        <img src="src/assets/mc.jpg" alt="Master Of Ceremony" style={{ width: "100%", borderRadius: "8px", marginTop: "10px" }} />
       </VerticalTimelineElement>
 
       <VerticalTimelineElement iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }} icon={<StarIcon />} />
