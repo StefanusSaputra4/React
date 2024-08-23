@@ -1,17 +1,21 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { TextField, Button, Box, Typography } from "@mui/material";
+import { TextField, Button, Box, Typography, useTheme } from "@mui/material";
 import BasicOutlinedTextarea from "../components/TextArea";
 import { IoSend } from "react-icons/io5";
+import Lottie from "lottie-react";
+import astronautAnimation from "../assets/astronout.json"; // Ganti dengan path yang sesuai
+import astronautAnimation2 from "../assets/astronout2.json"; // Ganti dengan path yang sesuai
 
 export default function Contact() {
   const form = useRef();
   const [errors, setErrors] = useState({
     user_name: "",
     user_email: "",
-
     message: "",
   });
+
+  const theme = useTheme(); // Mendapatkan tema saat ini
 
   const validateForm = () => {
     const formData = new FormData(form.current);
@@ -61,10 +65,11 @@ export default function Contact() {
     }
   };
 
+  const darkMode = theme.palette.mode === "dark"; // Menentukan apakah tema gelap aktif
+
   return (
     <Box
       sx={{
-        width: { xs: "100%", sm: "400px" },
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -73,64 +78,82 @@ export default function Contact() {
       }}
     >
       <Box
-        component="form"
-        ref={form}
-        onSubmit={sendEmail}
         sx={{
-          backgroundColor: (theme) => theme.palette.background.paper,
-          padding: 3,
-          borderRadius: 2,
-          boxShadow: (theme) => `0px 0px 10px ${theme.palette.grey[400]}`,
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          gap: 2,
         }}
       >
-        <Typography variant="h5" component="h1" gutterBottom>
-          Contact Us
-        </Typography>
-        <TextField
-          id="user_name"
-          name="user_name"
-          label="Fullname"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          error={!!errors.user_name}
-          helperText={errors.user_name}
-          InputProps={{
-            sx: { color: (theme) => theme.palette.text.primary },
-          }}
-        />
-        <TextField
-          id="user_email"
-          name="user_email"
-          label="Email"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          error={!!errors.user_email}
-          helperText={errors.user_email}
-          InputProps={{
-            sx: { color: (theme) => theme.palette.text.primary },
-          }}
-        />
-
-        <BasicOutlinedTextarea id="message" name="message" placeholder="Your message here..." error={!!errors.message} helperText={errors.message} />
-
-        <Button
-          type="submit"
-          variant="contained"
-          fullWidth
+        <Box
+          component="form"
+          ref={form}
+          onSubmit={sendEmail}
           sx={{
-            mt: 2,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            bgcolor: (theme) => theme.palette.primary.main,
-            color: (theme) => theme.palette.getContrastText(theme.palette.primary.main),
+            backgroundColor: (theme) => theme.palette.background.paper,
+            padding: 3,
+            borderRadius: 2,
+            boxShadow: (theme) => `0px 0px 10px ${theme.palette.grey[400]}`,
+            width: { xs: "100%", sm: "400px" },
           }}
         >
-          Send
-          <IoSend style={{ marginLeft: "8px", fontSize: "20px" }} />
-        </Button>
+          <Typography variant="h5" component="h1" gutterBottom>
+            Contact Us
+          </Typography>
+          <TextField
+            id="user_name"
+            name="user_name"
+            label="Fullname"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            error={!!errors.user_name}
+            helperText={errors.user_name}
+            InputProps={{
+              sx: { color: (theme) => theme.palette.text.primary },
+            }}
+          />
+          <TextField
+            id="user_email"
+            name="user_email"
+            label="Email"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            error={!!errors.user_email}
+            helperText={errors.user_email}
+            InputProps={{
+              sx: { color: (theme) => theme.palette.text.primary },
+            }}
+          />
+
+          <BasicOutlinedTextarea id="message" name="message" placeholder="Your message here..." error={!!errors.message} helperText={errors.message} />
+
+          <Button
+            type="submit"
+            variant="contained"
+            fullWidth
+            sx={{
+              mt: 2,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              bgcolor: (theme) => theme.palette.primary.main,
+              color: (theme) => theme.palette.getContrastText(theme.palette.primary.main),
+            }}
+          >
+            Send
+            <IoSend style={{ marginLeft: "8px", fontSize: "20px" }} />
+          </Button>
+        </Box>
+
+        <Box sx={{ flex: 1, display: "flex", justifyContent: "center" }}>
+          <Lottie
+            animationData={darkMode ? astronautAnimation : astronautAnimation2}
+            loop
+            style={{ width: "100%", maxWidth: "400px" }} // Sesuaikan ukuran sesuai kebutuhan
+          />
+        </Box>
       </Box>
     </Box>
   );

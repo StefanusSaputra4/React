@@ -77,7 +77,7 @@ export default function Home({ darkMode, toggleDarkMode }) {
           p: { xs: 2, sm: 5 }, // Responsive padding
         }}
       >
-        <Contact />
+        <Contact darkMode={darkMode} />
       </Box>
     </>
   );
