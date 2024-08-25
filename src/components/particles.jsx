@@ -48,7 +48,7 @@ const ParticlesComponent = ({ isDarkMode }) => {
           value: isDarkMode ? "#FFFFFF" : "#800080",
         },
         links: {
-          color: isDarkMode ? "#FFFFFF" : "#800080",
+          color: isDarkMode ? "none" : "#800080",
           distance: 150,
           enable: true,
           opacity: 0.3,
@@ -77,7 +77,7 @@ const ParticlesComponent = ({ isDarkMode }) => {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 0.5, max: 2 },
         },
       },
       detectRetina: true,
