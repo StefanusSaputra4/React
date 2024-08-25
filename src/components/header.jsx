@@ -94,18 +94,19 @@ export default function Header() {
             flexWrap: "wrap",
           }}
         >
-          <Link href="https://github.com/StefanusSaputra4/" color="inherit">
+          <Link className="box-animate-in-left" href="https://github.com/StefanusSaputra4/" color="inherit">
             <IconSkills icon={FaGithub} size={32} />
           </Link>
-          <Link href="https://www.instagram.com/stefanussaputra_/" color="inherit">
+          <Link className="box-animate-in-left" href="https://www.instagram.com/stefanussaputra_/" color="inherit">
             <IconSkills icon={FaInstagram} size={32} hoverColor="#E1306C" />
           </Link>
-          <Link href="https://github.com/StefanusSaputra4/" color="inherit">
+          <Link className="box-animate-in-left" href="https://github.com/StefanusSaputra4/" color="inherit">
             <IconSkills icon={FaLinkedin} size={32} hoverColor="#0000ff" />
           </Link>
         </Box>
 
         <Button
+          className="box-animate-in-left"
           variant="outlined"
           sx={{
             mt: 2, // Margin top untuk memberi jarak dari teks
@@ -140,6 +141,7 @@ export default function Header() {
       </Box>
 
       <Box
+        className="box-animate-in-right"
         sx={{
           flex: 1,
           display: "flex",

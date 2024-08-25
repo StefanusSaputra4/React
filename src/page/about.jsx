@@ -10,6 +10,7 @@ export default function About() {
   return (
     <>
       <Box
+        className="fade-in"
         component="section"
         sx={{
           display: "flex",
