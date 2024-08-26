@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Navbar from "../components/navbar";
@@ -9,30 +9,37 @@ import Header from "../components/header";
 
 export default function Home({ darkMode, toggleDarkMode }) {
   const [inView, setInView] = useState({ home: false, about: false, experience: false, contact: false });
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const experienceRef = useRef(null);
+  const contactRef = useRef(null);
 
-  const observeRef = (id) => {
-    return (node) => {
-      if (node !== null) {
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            setInView((prev) => ({ ...prev, [id]: entry.isIntersecting }));
-          },
-          { threshold: 0.1 }
-        );
-        observer.observe(node);
-        return () => observer.unobserve(node);
-      }
+  useEffect(() => {
+    const options = { threshold: 0.1 };
+    const observer = new IntersectionObserver(([entry]) => {
+      setInView((prev) => ({ ...prev, [entry.target.id]: entry.isIntersecting }));
+    }, options);
+
+    if (homeRef.current) observer.observe(homeRef.current);
+    if (aboutRef.current) observer.observe(aboutRef.current);
+    if (experienceRef.current) observer.observe(experienceRef.current);
+    if (contactRef.current) observer.observe(contactRef.current);
+
+    return () => {
+      if (homeRef.current) observer.unobserve(homeRef.current);
+      if (aboutRef.current) observer.unobserve(aboutRef.current);
+      if (experienceRef.current) observer.unobserve(experienceRef.current);
+      if (contactRef.current) observer.unobserve(contactRef.current);
     };
-  };
+  }, []);
 
   return (
     <>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-
       <Box
         id="home"
         component="section"
-        ref={observeRef("home")}
+        ref={homeRef}
         sx={{
           width: "100%",
           display: "flex",
@@ -53,7 +60,7 @@ export default function Home({ darkMode, toggleDarkMode }) {
       <Box
         id="about"
         component="section"
-        ref={observeRef("about")}
+        ref={aboutRef}
         sx={{
           textAlign: "center",
           p: { xs: 2, sm: 5 },
@@ -72,7 +79,7 @@ export default function Home({ darkMode, toggleDarkMode }) {
       <Box
         id="experience"
         component="section"
-        ref={observeRef("experience")}
+        ref={experienceRef}
         sx={{
           p: { xs: 2, sm: 5 },
           transition: "opacity 2s ease-out, transform 1s ease-out",
@@ -91,15 +98,24 @@ export default function Home({ darkMode, toggleDarkMode }) {
           }}
         >
           Experience
-          <p>Showcase of my latest works, projects, and Experience.</p>
         </Typography>
+        <Typography
+          variant="body1"
+          fontFamily="Centra"
+          sx={{
+            textAlign: "center",
+          }}
+        >
+          Showcase of my latest works, projects, and Experience.
+        </Typography>
+
         <Experience />
       </Box>
 
       <Box
         id="contact"
         component="section"
-        ref={observeRef("contact")}
+        ref={contactRef}
         sx={{
           display: "flex",
           flexDirection: "column",

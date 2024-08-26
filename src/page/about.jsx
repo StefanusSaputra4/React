@@ -10,7 +10,6 @@ export default function About() {
   return (
     <>
       <Box
-        className="fade-in"
         component="section"
         sx={{
           display: "flex",
@@ -22,34 +21,41 @@ export default function About() {
           borderBottom: "1px solid #000",
         }}
       >
-        <Typography fontFamily="Centra">
+        <Typography fontFamily="Centra" variant="body1" paragraph>
           Hello! My name is Stefanus Saputra, a passionate and dedicated Computer Science student at University Sanata Dharma. With a strong foundation in programming languages like Java and Python, and a keen interest in web development, I
           have been exploring various technologies, including React and Material-UI, to build intuitive and responsive web applications. My journey in tech began with a curiosity about how things work behind the scenes, and this curiosity
           has grown into a deep passion for coding and problem-solving. I enjoy turning complex problems into simple, beautiful, and efficient solutions. In my spare time, I contribute to open-source projects and constantly seek to learn
           new skills that can help me grow as a developer.
-          <h4>Programming Skills</h4>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 2,
-              flexWrap: "wrap",
-            }}
-          >
-            <IconSkills icon={FaJava} size={64} hoverColor="#CD5C08" />
-            <IconSkills icon={FaPython} hoverColor="#3FA2F6" />
-            <IconSkills icon={FaHtml5} hoverColor="#E76F51" />
-            <IconSkills icon={FaPhp} hoverColor="#304463" />
-            <IconSkills icon={FaJs} hoverColor="#FFDE4D" />
-            <IconSkills icon={FaReact} hoverColor="#3FA2F6" />
-            <IconSkills icon={MdOutlineCss} hoverColor="black" />
-          </Box>
-          <h4>Other Skills</h4>
         </Typography>
+
+        <Typography variant="h4" fontFamily="Centra" align="center" sx={{ mb: 2 }}>
+          Programming Skills
+        </Typography>
+
         <Box
-          component="sectionCard"
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 2,
+            flexWrap: "wrap",
+          }}
+        >
+          <IconSkills icon={FaJava} size={64} hoverColor="#CD5C08" />
+          <IconSkills icon={FaPython} size={64} hoverColor="#3FA2F6" />
+          <IconSkills icon={FaHtml5} size={64} hoverColor="#E76F51" />
+          <IconSkills icon={FaPhp} size={64} hoverColor="#304463" />
+          <IconSkills icon={FaJs} size={64} hoverColor="#FFDE4D" />
+          <IconSkills icon={FaReact} size={64} hoverColor="#3FA2F6" />
+          <IconSkills icon={MdOutlineCss} size={64} hoverColor="black" />
+        </Box>
+
+        <Typography variant="h4" fontFamily="Centra" align="center" sx={{ mb: 2 }}>
+          Other Skills
+        </Typography>
+
+        <Box
           sx={{
             display: "flex",
             flexDirection: "row",

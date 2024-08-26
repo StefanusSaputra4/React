@@ -98,7 +98,7 @@ export default function Contact() {
           }}
         >
           <Typography variant="h5" component="h1" gutterBottom>
-            Contact Us
+            Contact Me
           </Typography>
           <TextField
             id="user_name"
