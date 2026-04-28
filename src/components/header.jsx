@@ -6,6 +6,7 @@ import headerImg from "../assets/header-img.svg"; // Pastikan path SVG benar
 import Link from "@mui/material/Link";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import IconSkills from "./iconSkills";
+import TypeIt from "typeit-react";
 
 export default function Header() {
   const theme = useTheme();
@@ -66,7 +67,7 @@ export default function Header() {
             mb: 1,
           }}
         >
-          it's Stefanus Saputra
+          <TypeIt>it's Stefanus Saputra!!</TypeIt>
         </Typography>
         <Typography variant="h4" fontFamily="Centra" fontSize={{ xs: 24, md: 48 }}>
           <span style={{ fontWeight: "normal" }}>i'm a </span>
