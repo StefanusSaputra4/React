@@ -10,6 +10,11 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import AlbumIcon from "@mui/icons-material/Album";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import dolphinsImage from "../assets/3dolphins.png";
+import dnaImage from "../assets/DNA.jpg";
+import ipkImage from "../assets/ipk.png";
+
+
 
 export default function Timeline() {
   const theme = useTheme();
@@ -40,8 +45,16 @@ export default function Timeline() {
         <Typography variant="body1">
           Involved in enterprise solution implementation from assessment and requirements analysis through project kickoff, development, and deployment. Work directly with stakeholders to translate business needs into technical solutions, developing and customizing workflow automation, REST APIs, CRM, and ticketing systems — including integration with external services and Data Warehouse systems. Also integrate third-party GenAI services into system workflows and support production troubleshooting.
         </Typography>
-                <Box component="img" src="src/assets/3dolphins.png" alt="3dolphins" sx={{ width: "100%", borderRadius: "8px", mt: 2 }} />
-      </VerticalTimelineElement>
+        <Box
+          component="img"
+          src={dolphinsImage}
+          alt="3dolphins"
+          sx={{
+            width: "100%",
+            borderRadius: "8px"
+          }}
+        />      
+</VerticalTimelineElement>
 
       {/* Backend Developer Intern - PT. Digital Nusantara Adisolusi (DNA) */}
       <VerticalTimelineElement
@@ -61,9 +74,25 @@ export default function Timeline() {
         <Typography variant="body1">
           Developed backend features for authentication, authorization, and data management, including Google OAuth and database integration. Built a web-based CMS with full CRUD functionality and Role-Based Access Control (RBAC) to support content management for authorized users.
         </Typography>
-                <Box component="img" src="src/assets/DNA.jpg" alt="DNA" sx={{ width: "100%", borderRadius: "8px", mt: 2 }} />
-                <Box component="img" src="src/assets/ipk.png" alt="ipk" sx={{ width: "100%", borderRadius: "8px", mt: 2 }} />
-      </VerticalTimelineElement>
+        <Box
+          component="img"
+          src={dnaImage}
+          alt="DNA"
+          sx={{
+            width: "100%",
+            borderRadius: "8px"
+          }}
+        />     
+                <Box
+          component="img"
+          src={ipkImage}
+          alt="IPK"
+          sx={{
+            width: "100%",
+            borderRadius: "8px"
+          }}
+        />  
+        </VerticalTimelineElement>
 
       {/* Virtual Assistant Campus */}
       <VerticalTimelineElement
