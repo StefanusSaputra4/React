@@ -2,9 +2,19 @@ import React from "react";
 import ActionAreaCard from "../components/card";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Chip from "@mui/material/Chip";
 import IconSkills from "../components/iconSkills";
-import { FaJava, FaPython, FaHtml5, FaPhp, FaJs, FaReact } from "react-icons/fa";
-import { MdOutlineCss } from "react-icons/md";
+import { FaJava, FaPython, FaJs } from "react-icons/fa";
+import { SiPostgresql, SiDocker, SiGit, SiPostman } from "react-icons/si";
+
+const coreExpertise = [
+  "Backend Development",
+  "REST API Development",
+  "Workflow Automation",
+  "CRM & Ticketing Integration",
+  "System Integration",
+  "LLM & RAG Integration",
+];
 
 export default function About() {
   return (
@@ -22,10 +32,10 @@ export default function About() {
         }}
       >
         <Typography fontFamily="Centra">
-          Hello! My name is Stefanus Saputra, a passionate and dedicated Computer Science student at University Sanata Dharma. With a strong foundation in programming languages like Java and Python, and a keen interest in web development, I
-          have been exploring various technologies, including React and Material-UI, to build intuitive and responsive web applications. My journey in tech began with a curiosity about how things work behind the scenes, and this curiosity
-          has grown into a deep passion for coding and problem-solving. I enjoy turning complex problems into simple, beautiful, and efficient solutions. In my spare time, I contribute to open-source projects and constantly seek to learn
-          new skills that can help me grow as a developer.
+          Hello! My name is Stefanus Saputra, an Informatics student at Sanata Dharma University currently working as a Technical Consultant Intern at PT. Digital Nusantara Adisolusi (DNA). Over the past year and a half, I've been
+          involved end-to-end in enterprise solution implementation — from requirements analysis and kickoff, through backend development, REST API and CRM/ticketing integration, to deployment and production support. My journey in tech
+          began with a curiosity about how things work behind the scenes, and it has grown into a genuine interest in backend systems, automation, and, more recently, integrating LLMs into real workflows. I enjoy turning complex,
+          messy requirements into solutions that are simple, reliable, and easy to maintain.
           <h4>Programming Skills</h4>
           <Box
             sx={{
@@ -39,13 +49,39 @@ export default function About() {
           >
             <IconSkills icon={FaJava} size={64} hoverColor="#CD5C08" />
             <IconSkills icon={FaPython} hoverColor="#3FA2F6" />
-            <IconSkills icon={FaHtml5} hoverColor="#E76F51" />
-            <IconSkills icon={FaPhp} hoverColor="#304463" />
             <IconSkills icon={FaJs} hoverColor="#FFDE4D" />
-            <IconSkills icon={FaReact} hoverColor="#3FA2F6" />
-            <IconSkills icon={MdOutlineCss} hoverColor="black" />
+            <IconSkills icon={SiPostgresql} hoverColor="#336791" />
+            <IconSkills icon={SiDocker} hoverColor="#2496ED" />
+            <IconSkills icon={SiGit} hoverColor="#F05032" />
+            <IconSkills icon={SiPostman} hoverColor="#FF6C37" />
           </Box>
-          <h4>Other Skills</h4>
+
+          <h4>Core Expertise</h4>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 1,
+              flexWrap: "wrap",
+              mb: 2,
+            }}
+          >
+            {coreExpertise.map((skill) => (
+              <Chip
+                key={skill}
+                label={skill}
+                sx={{
+                  fontFamily: "Centra",
+                  bgcolor: (theme) => theme.palette.primary.main,
+                  color: (theme) => theme.palette.getContrastText(theme.palette.primary.main),
+                }}
+              />
+            ))}
+          </Box>
+
+          <h4>Beyond Work</h4>
         </Typography>
         <Box
           component="sectionCard"

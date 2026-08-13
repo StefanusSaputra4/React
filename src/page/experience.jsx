@@ -4,9 +4,10 @@ import "react-vertical-timeline-component/style.min.css";
 import { useTheme } from "@mui/material/styles";
 import WorkIcon from "@mui/icons-material/Work";
 import StarIcon from "@mui/icons-material/Star";
-import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+import SmartToyIcon from "@mui/icons-material/SmartToy";
+import DirectionsCarFilledIcon from "@mui/icons-material/DirectionsCarFilled";
+import BarChartIcon from "@mui/icons-material/BarChart";
 import AlbumIcon from "@mui/icons-material/Album";
-import PauseOutlinedIcon from "@mui/icons-material/PauseOutlined";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
@@ -15,89 +16,138 @@ export default function Timeline() {
   const darkBackground = theme.palette.background.paper;
   const darkText = theme.palette.text.primary;
 
+  const contentStyle = { background: darkBackground, color: darkText, border: `2px solid ${darkText}` };
+  const contentArrowStyle = { borderRight: `7px solid ${darkBackground}` };
+  const iconStyle = { background: theme.palette.primary.main, color: "#fff" };
+
   return (
     <VerticalTimeline lineColor={theme.palette.primary.main}>
+      {/* Technical Consultant Intern - PT. Digital Nusantara Adisolusi (DNA) */}
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{
-          background: darkBackground,
-          color: darkText,
-          border: `2px solid ${darkText}`,
-        }}
-        contentArrowStyle={{ borderRight: `7px solid ${darkBackground}` }}
-        date="2024 - Current"
-        iconStyle={{ background: theme.palette.primary.main, color: "#fff" }}
-        icon={<LocalHospitalIcon />}
+        contentStyle={contentStyle}
+        contentArrowStyle={contentArrowStyle}
+        date="May 2025 - Present"
+        iconStyle={iconStyle}
+        icon={<WorkIcon />}
       >
         <Typography variant="h6" component="h3">
-          Hospital Information System
+          Technical Consultant Intern
         </Typography>
         <Typography variant="subtitle1" component="h4">
-          Hospital
+          PT. Digital Nusantara Adisolusi (DNA) — Yogyakarta
         </Typography>
         <Typography variant="body1">
-          Developed a Hospital Information System to streamline operations, integrating patient registration, medical records, appointment scheduling, and billing for improved workflow and healthcare quality.
+          Involved in enterprise solution implementation from assessment and requirements analysis through project kickoff, development, and deployment. Work directly with stakeholders to translate business needs into technical solutions, developing and customizing workflow automation, REST APIs, CRM, and ticketing systems — including integration with external services and Data Warehouse systems. Also integrate third-party GenAI services into system workflows and support production troubleshooting.
         </Typography>
-        <Box component="img" src="https://medevel.com/content/images/size/w1000/2018/12/Open-Hospital_14.png" alt="Hospital System" sx={{ width: "100%", borderRadius: "8px", mt: 2 }} />
+                <Box component="img" src="src/assets/3dolphins.png" alt="3dolphins" sx={{ width: "100%", borderRadius: "8px", mt: 2 }} />
       </VerticalTimelineElement>
 
+      {/* Backend Developer Intern - PT. Digital Nusantara Adisolusi (DNA) */}
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: darkBackground, color: darkText, border: `2px solid ${darkText}` }}
-        contentArrowStyle={{ borderRight: `7px solid ${darkBackground}` }}
+        contentStyle={contentStyle}
+        contentArrowStyle={contentArrowStyle}
+        date="Aug 2024 - May 2025"
+        iconStyle={iconStyle}
+        icon={<WorkIcon />}
+      >
+        <Typography variant="h6" component="h3">
+          Backend Developer Intern
+        </Typography>
+        <Typography variant="subtitle1" component="h4">
+          PT. Digital Nusantara Adisolusi (DNA) — Yogyakarta
+        </Typography>
+        <Typography variant="body1">
+          Developed backend features for authentication, authorization, and data management, including Google OAuth and database integration. Built a web-based CMS with full CRUD functionality and Role-Based Access Control (RBAC) to support content management for authorized users.
+        </Typography>
+                <Box component="img" src="src/assets/DNA.jpg" alt="DNA" sx={{ width: "100%", borderRadius: "8px", mt: 2 }} />
+                <Box component="img" src="src/assets/ipk.png" alt="ipk" sx={{ width: "100%", borderRadius: "8px", mt: 2 }} />
+      </VerticalTimelineElement>
+
+      {/* Virtual Assistant Campus */}
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={contentStyle}
+        contentArrowStyle={contentArrowStyle}
+        date="Academic Project"
+        iconStyle={iconStyle}
+        icon={<SmartToyIcon />}
+      >
+        <Typography variant="h6" component="h3">
+          Virtual Assistant Campus
+        </Typography>
+        <Typography variant="subtitle1" component="h4">
+          FastAPI · Ollama · RAG · Docker
+        </Typography>
+        <Typography variant="body1">
+          A web-based virtual assistant prototype exploring how LLMs can support campus information services. Built the backend with FastAPI, integrated an LLM via Ollama using a Retrieval-Augmented Generation (RAG) approach for document-based responses, and containerized the app with Docker.
+        </Typography>
+        {/* Add a screenshot here, e.g. src/assets/va-campus.jpg */}
+      </VerticalTimelineElement>
+
+      {/* GammaFest */}
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={contentStyle}
+        contentArrowStyle={contentArrowStyle}
+        date="Competition"
+        iconStyle={iconStyle}
+        icon={<DirectionsCarFilledIcon />}
+      >
+        <Typography variant="h6" component="h3">
+          GammaFest — Vehicle License Plate Detection
+        </Typography>
+        <Typography variant="subtitle1" component="h4">
+          YOLOv8 · Roboflow
+        </Typography>
+        <Typography variant="body1">
+          Developed a vehicle license plate detection model using YOLOv8, with dataset preprocessing and model training done in Roboflow, as part of a computer vision pipeline for plate detection.
+        </Typography>
+      </VerticalTimelineElement>
+
+      {/* SatriaData */}
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={contentStyle}
+        contentArrowStyle={contentArrowStyle}
+        date="Competition"
+        iconStyle={iconStyle}
+        icon={<BarChartIcon />}
+      >
+        <Typography variant="h6" component="h3">
+          SatriaData — Data Science Competition
+        </Typography>
+        <Typography variant="subtitle1" component="h4">
+          Python · Google Colab
+        </Typography>
+        <Typography variant="body1">
+          Performed data exploration, preprocessing, and machine learning model development and evaluation for a data science competition.
+        </Typography>
+      </VerticalTimelineElement>
+
+      {/* Kasetflix */}
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={contentStyle}
+        contentArrowStyle={contentArrowStyle}
         date="2024"
-        iconStyle={{ background: theme.palette.primary.main, color: "#fff" }}
+        iconStyle={iconStyle}
         icon={<AlbumIcon />}
       >
         <Typography variant="h6" component="h3">
-          Create a Website
+          Kasetflix — Music Cassette Marketplace
         </Typography>
         <Typography variant="subtitle1" component="h4">
-          Kasetflix
+          Team Project
         </Typography>
         <Typography variant="body1">
-          I am currently developing a website called 'Kasetflix' as part of a course project. The platform is designed to function similarly to Netflix, allowing users to stream and enjoy various media content online.
+          A music cassette marketplace platform with a Netflix-like interface concept, built collaboratively with a team, including the product catalog system and basic listing features.
         </Typography>
         <Typography variant="body2">
           <a href="https://github.com/Jikoyuo/Platform-Project">Repo</a>
         </Typography>
         <Box component="img" src="src/assets/kasetflix.jpg" alt="Kasetflix" sx={{ width: "100%", borderRadius: "8px", mt: 2 }} />
-      </VerticalTimelineElement>
-
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        contentStyle={{ background: darkBackground, color: darkText, border: `2px solid ${darkText}` }}
-        contentArrowStyle={{ borderRight: `7px solid ${darkBackground}` }}
-        date="2023"
-        iconStyle={{ background: theme.palette.primary.main, color: "#fff" }}
-        icon={<PauseOutlinedIcon />}
-      >
-        <Typography variant="h6" component="h3">
-          Create a Mp3 Player WAV
-        </Typography>
-        <Typography variant="subtitle1" component="h4">
-          Mp3 Player
-        </Typography>
-        <Typography variant="body1">I developed a simple music player in Java, focusing on .wav audio files. This project enhanced my Java skills and provided insights into audio data processing.</Typography>
-        <Box component="img" src="src/assets/musicPlayer.jpg" alt="Music Player" sx={{ width: "100%", borderRadius: "8px", mt: 2 }} />
-      </VerticalTimelineElement>
-
-      <VerticalTimelineElement
-        className="vertical-timeline-element--work"
-        contentStyle={{ background: darkBackground, color: darkText, border: `2px solid ${darkText}` }}
-        contentArrowStyle={{ borderRight: `7px solid ${darkBackground}` }}
-        date="2024"
-        iconStyle={{ background: theme.palette.primary.main, color: "#fff" }}
-        icon={<WorkIcon />}
-      >
-        <Typography variant="h6" component="h3">
-          Becoming a Teaching Assistant
-        </Typography>
-        <Typography variant="subtitle1" component="h4">
-          Yogyakarta, Indonesia
-        </Typography>
-        <Typography variant="body1">I worked as a teaching assistant for the Linear Data Structures course at Sanata Dharma University in Yogyakarta.</Typography>
-        <Box component="img" src="src/assets/asdos.jpg" alt="Teaching Assistant" sx={{ width: "100%", borderRadius: "8px", mt: 2 }} />
       </VerticalTimelineElement>
 
       <VerticalTimelineElement iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }} icon={<StarIcon />} />
